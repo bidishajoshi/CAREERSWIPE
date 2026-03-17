@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        main {
+            display: flex;
+            flex: 1;
+        }
+        nav {
+            width: 250px;
+            background-color: #f4f4f4;
+            padding: 1rem;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 1rem 0;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        section {
+            flex: 1;
+            padding: 1rem;
+        }
+        .jobs-list {
+            margin-top: 1rem;
+        }
+        .job-item {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+        }
+        .dashboard {
+            display: flex;
+            flex-direction: column;
+        }
+        .dashboard-card {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jobs Dashboard</h1>
+    </header>
+    <main>
+        <nav>
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#jobs">Jobs</a></li>
+            </ul>
+        </nav>
+        <section id="dashboard" class="dashboard">
+            <h2>Dashboard</h2>
+            <div class="dashboard-card">
+                <h3>Total Jobs</h3>
+                <p>42</p>
+            </div>
+            <div class="dashboard-card">
+                <h3>Active Users</h3>
+                <p>128</p>
+            </div>
+        </section>
+        <section id="jobs">
+            <h2>Jobs</h2>
+            <div class="jobs-list">
+                <div class="job-item">
+                    <h3>Frontend Developer</h3>
+                    <p>Location: Remote</p>
+                    <p>Status: Open</p>
+                </div>
+                <div class="job-item">
+                    <h3>Backend Developer</h3>
+                    <p>Location: New York</p>
+                    <p>Status: Closed</p>
+                </div>
+                <div class="job-item">
+                    <h3>UI/UX Designer</h3>
+                    <p>Location: London</p>
+                    <p>Status: Open</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

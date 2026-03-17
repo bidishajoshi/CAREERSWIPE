@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swipe Jobs - CareerSwipe</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .job-card {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            width: 400px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .like {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .dislike {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .logout {
+            background-color: #555;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Swipe Jobs</h1>
+
+    {% if jobs and jobs|length > 0 %}
+        {% for job in jobs %}
+            <div class="job-card">
+                <h2>{{ job.title }}</h2>
+
+                <p><strong>Company:</strong>
+                    {{ job.company_name if job.company_name else "N/A" }}
+                </p>
+
+                <p><strong>Description:</strong>
+                    {{ job.description if job.description else "No description available." }}
+                </p>
+
+                <a href="{{ url_for('like_job', job_id=job.id) }}">
+                    <button class="like">Like ✅</button>
+                </a>
+
+                <a href="{{ url_for('dislike_job', job_id=job.id) }}">
+                    <button class="dislike">Dislike ❌</button>
+                </a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p><strong>No jobs available at the moment.</strong></p>
+        <p>Check back later!</p>
+    {% endif %}
+
+    <br><br>
+
+    <a href="{{ url_for('logout') }}">
+        <button class="logout">Logout</button>
+    </a>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ job.title }} - Job Details</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        main {
+            padding: 1rem;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .job-item {
+            background-color: white;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .actions {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .actions button {
+            padding: 0.75rem 1.5rem;
+            margin: 0.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .like {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .dislike {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .back {
+            background-color: #555;
+            color: white;
+        }
+
+        .logout {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .logout button {
+            background-color: #ff4b4b;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .logout button:hover {
+            background-color: #e03e3e;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Job Details</h1>
+</header>
+
+<main>
+    <div class="job-item">
+        <h2>{{ job.title }}</h2>
+
+        <p><strong>Company:</strong>
+            {{ job.company_name if job.company_name else "N/A" }}
+        </p>
+
+        <p><strong>Description:</strong><br>
+            {{ job.description if job.description else "No description available." }}
+        </p>
+
+        {% if job.skills %}
+        <p><strong>Skills Required:</strong> {{ job.skills }}</p>
+        {% endif %}
+
+        <div class="actions">
+            <a href="{{ url_for('swipe', job_id=job.id, action='like') }}">
+                <button class="like">Like ✅</button>
+            </a>
+
+            <a href="{{ url_for('swipe', job_id=job.id, action='dislike') }}">
+                <button class="dislike">Dislike ❌</button>
+            </a>
+
+            <br><br>
+
+            <a href="{{ url_for('dashboard') }}">
+                <button class="back">⬅ Back to Swipe</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="logout">
+        <a href="{{ url_for('logout') }}">
+            <button>Logout</button>
+        </a>
+    </div>
+</main>
+
+</body>
+</html>
