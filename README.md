@@ -1,4 +1,5 @@
 📘 CareerSwipe – Swap-Based Job Recommendation System
+
 🚀 Overview
 
 CareerSwipe is a web-based job recommendation system designed to simplify the job search process in Nepal. Instead of traditional searching, the system provides a swipe-based interface where users can explore and interact with job opportunities in an intuitive way.
