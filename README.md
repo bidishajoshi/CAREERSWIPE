@@ -3,7 +3,6 @@
 🚀 Overview
 
 CareerSwipe is a web-based job recommendation system designed to simplify the job search process in Nepal. Instead of traditional searching, the system provides a swipe-based interface where users can explore and interact with job opportunities in an intuitive way.
-
 The system uses content-based filtering techniques to recommend jobs based on user profiles, including skills, education, and preferences, making job discovery faster and more relevant.
 
 🎯 Problem Statement
@@ -47,6 +46,7 @@ Recommend jobs based on user preferences
 Improve accessibility to job opportunities
 
 ⚙️ Technologies Used
+
 🖥️ Frontend
 
 HTML
@@ -74,6 +74,7 @@ spaCy
 MySQL
 
 🧩 Key Features
+
 👤 Job Seeker
 
 User registration & login
